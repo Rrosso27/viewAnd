@@ -1,0 +1,47 @@
+<form [formGroup]="form"  (ngSubmit)="addPetition()">
+  <input formControlName="date" type="hidden" class="form-control" id="date">
+  <div class="modal-body">
+    <div class="form-group">
+      <label for="date" class="form-label mt-4">Fecha</label>
+      <input formControlName="date" type="date" class="form-control" id="date">
+      <span *ngIf="form.get('date')?.hasError('required') && form.get('date')?.touched">
+        Este campo es <strong>requerido</strong>
+      </span>
+    </div>
+  </div>
+
+  <div class="modal-body">
+    <div class="form-group">
+      <label for="method" class="form-label mt-4">método</label>
+      <input formControlName="method" type="text" class="form-control" id="method">
+      <span *ngIf="form.get('method')?.hasError('required') && form.get('method')?.touched">
+        Este campo es <strong>requerido</strong>
+      </span>
+    </div>
+  </div>
+
+
+  <div class="modal-body">
+    <div class="form-group">
+      <label for="consulted" class="form-label mt-4">consultado</label>
+      <input formControlName="consulted" type="text" class="form-control" id="consulted">
+      <span *ngIf="form.get('consulted')?.hasError('required') && form.get('consulted')?.touched">
+        Este campo es <strong>requerido</strong>
+      </span>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="returnedData" class="form-label mt-4">datos retornados</label>
+    <textarea formControlName="returnedData" class="form-control" id="returnedData" rows="3"></textarea>
+    <span *ngIf="form.get('returnedData')?.hasError('required') && form.get('returnedData')?.touched">
+      Este campo es <strong>requerido</strong>
+    </span>
+  </div>
+
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Save changes</button>
+  </div>
+</form>

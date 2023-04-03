@@ -1,0 +1,15 @@
+.title {
+  width: 100%;
+  height: 100%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title table {
+  width: 50%;
+}
+.btn-action {
+  display: flex;
+  justify-content: space-between;
+}

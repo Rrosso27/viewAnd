@@ -1,0 +1,67 @@
+<div class="container">
+  <div>
+    <button routerLink="/form" type="button" class="btn  btn-outline-primary" >
+      Crear petision
+    </button>
+  </div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Fecha</th>
+        <th scope="col">método</th>
+        <th scope="col">consultado</th>
+        <th scope="col">datos retornados</th>
+        <th scope="col"> </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of petitions  " class="table-secondary">
+        {{item.id}}
+        <td>{{item.date}}</td>
+        <td>{{item.method}}</td>
+        <td>{{item.consulted}}</td>
+        <td>{{item.returnedData}}</td>
+        <td>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary" routerLink="/form">
+            Launch demo modal
+          </button>
+          <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+            data-bs-target="#delete">eliminar</button>
+        </td>
+
+
+  <!-- eliminar -->
+  <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="delete" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="delete"></h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ¿Estas seguro de eliminar este dato?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">no</button>
+          <button type="button" (click)="deletePetition(item.id!)" class="btn btn-outline-danger">si</button>
+        </div>
+      </div>
+    </div>
+  </div>
+      </tr>
+
+    </tbody>
+  </table>
+
+
+
+
+  <!-- eliminar -->
+
+
+
+
+
+
+</div>
